@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
     // States
     public bool IsMovingInX { get; private set; }
     public float DirectionInX { get; private set; }
-    public bool IsStopInX { get; private set; }
+    public bool IsStoppedInX { get; private set; }
     public bool IsGrounded { get; private set; }
     public bool IsJumping { get; private set; }
     public bool IsFalling { get; private set; }
@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour {
         // X axis
         IsMovingInX = Input.GetAxisRaw("Horizontal") != 0;
         DirectionInX = Input.GetAxisRaw("Horizontal");
-        IsStopInX = _rb.velocity.x == 0;
+        IsStoppedInX = _rb.velocity.x == 0;
 
         // Y axis
         IsJumping = _rb.velocity.y > 0;
